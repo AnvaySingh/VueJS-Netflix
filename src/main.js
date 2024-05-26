@@ -1,5 +1,11 @@
 import { createApp } from 'vue'
-import './style.css'
+import { createPinia } from 'pinia'
+import './assets/main.css' //Import the main.css path that was created
+import './stores/movie.js'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+const pinia = createPinia()
+const app = createApp(App)
+
+app.use(pinia)
+app.mount('#app')
